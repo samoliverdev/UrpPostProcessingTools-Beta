@@ -19,6 +19,8 @@ namespace OD {
 
             public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData){
                 if (settings == null) return;
+                if(renderingData.cameraData.cameraType != CameraType.Game && renderingData.cameraData.cameraType != CameraType.SceneView) return;
+                
                 material = settings.material;
 
                 if(material == null) return;
